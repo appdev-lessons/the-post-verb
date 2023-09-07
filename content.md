@@ -30,7 +30,7 @@ Or you can place the above `GET` request by [clicking on this link](https://en.w
 
 But what if the user should be able to send any information they want as part of a request? For example, if we want to perform a Google search for the term `ruby language`?
 
-It turns out that Google will accept any search term in a [query string](https://learn.firstdraft.com/lessons/102) at the end of the request path `/search`:
+It turns out that Google will accept any search term in a [query string](https://learn.firstdraft.com/lessons/102-query-strings-and-forms) at the end of the request path `/search`:
 
 ```http
 GET /search?q=ruby+language HTTP/1.1
@@ -78,7 +78,7 @@ Query strings are a straightforward way to send information right inside the URL
 - **Security:** Imagine we are writing a form that lets users sign up for an account. Consider the following code and try to guess what will happen when we fill it out and submit it:
 
 ```html
-<form action="https://learn.firstdraft.com/lessons/115">
+<form action="https://learn.firstdraft.com/lessons/115-the-post-verb">
 
   <label for="email_field">My email:</label>
   <input id="email_field" type="text" name="my_email">
@@ -94,7 +94,7 @@ Here is the rendered form. Try filling it out and submitting it — **but don't 
 
 ---
 
-<form action="https://learn.firstdraft.com/lessons/115">
+<form action="https://learn.firstdraft.com/lessons/115-the-post-verb">
   
   <label for="email_field">My email:</label>
   <input id="email_field" type="text" name="my_email">
@@ -107,7 +107,7 @@ Here is the rendered form. Try filling it out and submitting it — **but don't 
 
 ---
 
-Since the `action` is `https://learn.firstdraft.com/lessons/115`, you end up right back here on the URL for this lesson. No sign up actually happens; this is just a pretend form.
+Since the `action` is `https://learn.firstdraft.com/lessons/115-the-post-verb`, you end up right back here on the URL for this lesson. No sign up actually happens; this is just a pretend form.
 
 But you can see that even though we did the right thing and used an `input` of `type` `password` which masks the characters that the user types, after the form is submitted the password shows up in clear text in the address bar, in the query string. Oops!
 
