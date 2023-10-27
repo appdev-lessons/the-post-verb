@@ -221,6 +221,8 @@ So, this was a long-winded way to say:
 - In our Ruby apps, the routes that receive and process these requests should use `post()` rather than `get()`.
 - Everything else stays the same as when we were using `GET`s and query strings.
 
+---
+
 - Select all that are true:
 - We should use a POST on the form and route when we are _reading_ from our database.
   - Not quite, re-read the previous section.
