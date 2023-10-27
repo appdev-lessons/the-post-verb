@@ -136,7 +136,7 @@ my_email=alice@example.com&my_password=supersecretpassword
 
 A browser will place a `POST` request like the above when a form like the following is submitted:
 
-```html
+```html{1:(54-66)}
 <form action="https://www.example.com/users/sign_up" method="post">
   <label for="email_field">My email:</label>
   <input id="email_field" type="text" name="my_email">
@@ -162,7 +162,7 @@ In Sinatra, to respond to a `POST` request, we use the method `post()` rather th
 
 In other words, if we have a form that looks like this on one of our pages:
 
-```html
+```html{1:(29-41)}
 <form action="/add_results" method="post">
   <label for="first_num_field">Add this:</label>
   <input id="first_num_field" name="first_number">
@@ -186,7 +186,7 @@ first_number=10&second_number=5
 
 In order to match this request, we must use the method `post()` rather than `get()` in our route:
 
-```ruby
+```ruby{1:(1-4)}
 post("/add_results") do
   # The code for the action goes here
 end
@@ -221,3 +221,23 @@ So, this was a long-winded way to say:
 - In our Ruby apps, the routes that receive and process these requests should use `post()` rather than `get()`.
 - Everything else stays the same as when we were using `GET`s and query strings.
 
+- Select all that are true:
+- We should use a POST on the form and route when we are _reading_ from our database.
+  - Not quite, re-read the previous section.
+- By default, forms make a GET request.
+  - Yes!
+- We should use a POST on the form and route when we are _creating_ in our database.
+  - Yes!
+- GET requests hide the query string from the URL bar.
+  - Not quite.
+- POST requests hide the query string from the URL bar.
+  - Yes! But even though it's hidden, we still access the `params` in exactly the same way as before in our backend.
+- GET request query strings have an unlimited length.
+  - Not quite, re-read the previous section.
+- Making a form submit a POST request is done by adding `method="post"` after the `action` attribute.
+  - Yes!
+- This is a valid form and route pair and will not cause an error: `<form action="/result" method="post">` and `get("/result" ...)`.
+  - This is _not_ valid. POST forms should be paired with POST routes: `post("/result" ...)`, or you will get a "route not found" error.
+{: .choose_all #post_quiz title="POST Quiz" points="4" answer="[2,3,5,7]" }
+
+---
