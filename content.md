@@ -238,8 +238,6 @@ So, this was a long-winded way to say:
   - Not quite, re-read the previous section.
 - Making a form submit a POST request is done by adding `method="post"` after the `action` attribute.
   - Yes!
-- This is a valid form and route pair and will not cause an error: `<form action="/result" method="post">` and `get("/result" ...)`.
-  - This is _not_ valid. POST forms should be paired with POST routes: `post("/result" ...)`, or you will get a "route not found" error.
 {: .choose_all #post_quiz title="POST Quiz" points="4" answer="[2,3,5,7]" }
 
 ---
