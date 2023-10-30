@@ -1,6 +1,6 @@
 # The POST verb
 
-The purpose of most [HTTP requests](https://learn.firstdraft.com/lessons/98) — i.e., when we click on a link or tap on something — is to _retrieve_ information. E.g. this request retrieves HTML source code that describes Chicago:
+The purpose of most [HTTP requests](https://learn.firstdraft.com/lessons/224-http-anatomy) — i.e., when we click on a link or tap on something — is to _retrieve_ information. E.g. this request retrieves HTML source code that describes Chicago:
 
 ```http
 GET /wiki/Chicago HTTP/1.1
