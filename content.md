@@ -158,7 +158,7 @@ That's it! Now we can build forms that allow users to send us entire blog posts,
 
 ### Responding to POST requests
 
-In Sinatra, to respond to a `POST` request, we use the method `post()` rather than `get()` in our `app.rb`.
+To respond to a `POST` request, we use the `post()` method rather than the `get()` method in both Sinatra (in `app.rb`) and Rails (in `config/routes.rb`).
 
 In other words, if we have a form that looks like this on one of our pages:
 
@@ -186,10 +186,18 @@ first_number=10&second_number=5
 
 In order to match this request, we must use the method `post()` rather than `get()` in our route:
 
-```ruby{1:(1-4)}
+```ruby{3:(1-4)}
+# In a Sinatra app:
+
 post("/add_results") do
   # The code for the action goes here
 end
+```
+
+```ruby{3:(1-4)}
+# In a Rails app:
+
+post("/add_results", { :controller => "math", :action => "add" })
 ```
 
 The key-value pairs in the body of the request are parsed and placed into the `params` hash under keys determined by the `name`s of the `<input>`s, just like before. So the `params` hash will look like this:
@@ -217,9 +225,10 @@ end
 
 So, this was a long-winded way to say:
 
-- Most HTML `<form>`s should use `method="post"` rather than `method="get"` (the default).
+- HTML `<form>`s that _create_ or _change_ information should use `method="post"` rather than `method="get"`.
+- `method="get"` is the default for `<form>`s. To use `POST`, we have to explicitly add the `method="post"` attribute.
 - In our Ruby apps, the routes that receive and process these requests should use `post()` rather than `get()`.
-- Everything else stays the same as when we were using `GET`s and query strings.
+- Nothing changes as far as retrieving the values from the `params` hash.
 
 ---
 
