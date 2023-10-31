@@ -78,7 +78,7 @@ Query strings are a straightforward way to send information right inside the URL
 - **Security:** Imagine we are writing a form that lets users sign up for an account. Consider the following code and try to guess what will happen when we fill it out and submit it:
 
 ```html
-<form action="https://learn.firstdraft.com/lessons/115-the-post-verb">
+<form action="https://checkins.firstdraft.com/lessons/115-the-post-verb">
 
   <label for="email_field">My email:</label>
   <input id="email_field" type="text" name="my_email">
@@ -94,7 +94,7 @@ Here is the rendered form. Try filling it out and submitting it — **but don't 
 
 ---
 
-<form action="https://learn.firstdraft.com/lessons/115-the-post-verb">
+<form action="https://checkins.firstdraft.com/lessons/115-the-post-verb">
   
   <label for="email_field">My email:</label>
   <input id="email_field" type="text" name="my_email">
@@ -107,7 +107,7 @@ Here is the rendered form. Try filling it out and submitting it — **but don't 
 
 ---
 
-Since the `action` is `https://learn.firstdraft.com/lessons/115-the-post-verb`, you end up right back here on the URL for this lesson. No sign up actually happens; this is just a pretend form.
+Since the `action` is `https://checkins.firstdraft.com/lessons/115-the-post-verb`, you end up right back here on the URL for this lesson. No sign up actually happens; this is just a pretend form.
 
 But you can see that even though we did the right thing and used an `input` of `type` `password` which masks the characters that the user types, after the form is submitted the password shows up in clear text in the address bar, in the query string. Oops!
 
